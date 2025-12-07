@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Winter Postcard History ❄️</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+.history-container {
+    margin-top: 22vh;
+    width: 90%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(255,200,120,0.2);
+}
+
+.history-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: 'Nunito', sans-serif;
+    color: #f7d9a8;
+    margin-bottom: 20px;
+}
+
+.history-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item p {
+    margin: 4px 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.view-btn-small {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #f7d9a8;
+    color: #3d2b10;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    transition: 0.25s ease;
+}
+
+.view-btn-small:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(255,200,150,0.7);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+</header>
+
+<div class="history-container">
+    <h1 class="history-title">Your Sent Postcards</h1>
+
+    {% if postcards %}
+        {% for id, card in postcards.items() %}
+        <div class="history-item">
+            <p><strong>To:</strong> {{ card.to if card.to else card["to"] }}</p>
+            <p><strong>From:</strong> {{ card.from if card.from else card["from"] }}</p>
+            <p><strong>Message:</strong> “{{ card.message if card.message else card["message"] }}”</p>
+
+            <a href="/reveal/{{ id }}" class="view-btn-small">View Bloom ✨</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center; opacity:0.7;">No postcards sent yet…</p>
+    {% endif %}
+</div>
+
+<div class="village"></div>
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+
+</body>
+</html>
