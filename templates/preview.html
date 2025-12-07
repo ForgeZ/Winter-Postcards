@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preview Your Whisper ✨</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <a href="mailto:YOUR_EMAIL_HERE" class="contact-icon">
+        ❄️
+    </a>
+</header>
+
+
+
+<main class="center">
+  <h1>Your Whisper</h1>
+  <p class="sub">Held gently inside a globe of winter light.</p>
+
+  <div class="card">
+    <img src="/static/images/globes/{{ globe }}.png" style="width:150px;">
+    <p class="poem">{{ message }}</p>
+    <p class="soft">“A message waiting to be carried by the quiet snow.”</p>
+  </div>
+
+  <br>
+
+  <form action="/final" method="POST">
+  <input type="hidden" name="globe" value="{{ globe }}">
+  <input type="hidden" name="message" value="{{ message }}">
+  <input type="hidden" name="to_name" value="{{ to_name }}">
+  <input type="hidden" name="from_name" value="{{ from_name }}">
+  <button class="btn" type="submit">Send Into the Night 💫</button>
+</form>
+
+</main>
+
+<div class="village"></div>
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+
+</body>
+</html>

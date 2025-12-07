@@ -29,7 +29,12 @@ def home():
 # ----------------------- GLOBE SELECT -------------------- #
 @app.route("/globes")
 def globes():
-    globe_ids = ["globe1", "globe2", "globe3", "globe4"]
+    globe_ids = [
+    "globe1", "globe2", "globe3", "globe4",
+    "globe5", "globe6", "globe7", "globe8",
+    "globe9", "globe10", "globe11", "globe12"
+]
+
     return render_template("globes.html", globes=globe_ids)
 
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Snow Bloom ❄️</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+/* MAIN CARD */
+.final-card {
+    margin-top: 160px;
+    background: rgba(0,0,0,0.45);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: 600px;
+    text-align: center;
+    color: #f7f3e9;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 30px rgba(255,220,150,0.15);
+}
+
+/* COPY BOX */
+.touch-copy {
+    margin-top: 25px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    color: #ffe9b0;
+    font-size: 0.9rem;
+    text-align: center;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.touch-copy:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+/* NAV BUTTONS */
+.bottom-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-btn {
+    background: #f7d9a8;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #3d2b10;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255,200,120,0.55);
+    transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px rgba(255,210,150,0.85);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <!-- Fixed mail link -->
+    <a href="mailto:shivamt.2528@itmuniversity.org" class="contact-icon">
+        ❄️
+    </a>
+</header>
+
+<div class="final-card">
+
+    <h1>Your Snow Bloom ❄️</h1>
+    <p class="sub">A message ready to travel the winter night.</p>
+
+    <img src="/static/images/globes/{{ globe }}.png"
+         style="width:180px; margin:20px 0;">
+
+    <p><strong>To:</strong> {{ to_name }}</p>
+    <p><strong>From:</strong> {{ from_name }}</p>
+
+    <p class="poem" style="margin-top:25px;">“{{ message }}”</p>
+
+    <!-- COPY ONLY THE LINK — buttons are OUTSIDE -->
+    <div id="copyBox" class="touch-copy">
+        Tap to copy link:<br>
+        <span id="copyText">{{ request.url_root }}reveal/{{ postcard_id }}</span>
+    </div>
+
+    <!-- REAL BUTTONS (no bubbling issues) -->
+    <div class="bottom-nav">
+        <a href="/" class="nav-btn">🏡 Home</a>
+        <a href="/history" class="nav-btn">📜 History</a>
+    </div>
+
+</div>
+
+<div class="village"></div>
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+
+<script>
+// Copy ONLY when clicking the link box text
+document.getElementById("copyBox").addEventListener("click", function (e) {
+    const url = document.getElementById("copyText").textContent.trim();
+    navigator.clipboard.writeText(url);
+    alert("Link copied!");
+});
+</script>
+
+</body>
+</html>

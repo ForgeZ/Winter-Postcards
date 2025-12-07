@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Select a Snow Globe ✨</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <a href="mailto:shivamt.2528@itmuniversity.org" class="contact-icon">
+        ❄️
+    </a>
+</header>
+
+
+<main class="center">
+  <h1>Choose Your Snow Globe</h1>
+  <p class="sub">Each globe holds a quiet world, waiting for your words.</p>
+
+  <form action="/write" method="POST">
+
+    <div class="globe-grid">
+        {% for g in globes %}
+           <label class="globe-item">
+    <input type="radio" name="globe" value="{{ g }}" required>
+    <img src="/static/images/globes/{{ g }}.png">
+    <div class="selected-dot"></div>
+    
+</label>
+
+        {% endfor %}
+    </div>
+
+    <button type="submit" class="btn">Continue ❄️</button>
+
+  </form>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/snow.js') }}?v=999"></script>
+</body>
+</html>

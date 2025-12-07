@@ -1,0 +1,1169 @@
+/* -----------------------------------------------
+   CHRISTMAS EMOTIONAL POSTCARDS — MASTER STYLE
+   Soft-fantasy winter night aesthetic
+------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap');
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------
+   GLOBAL PAGE BACKGROUND
+-------------------------------------------------- */
+body {
+  font-family: 'Playfair Display', serif;
+  background:
+    url('../images/village.png') no-repeat bottom center,
+    radial-gradient(circle at top, #152233 0%, #0b1624 60%, #08131f 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #f2ede4;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* -------------------------------------------------
+   HEADER
+-------------------------------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 32px;
+
+background: rgba(10, 18, 30, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 20;
+
+  /* REMOVE glow causing brightness */
+  box-shadow: none;
+}
+
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;   /* NEW FONT */
+    font-size: 2.4rem;
+    font-weight: 800;                     /* thick, rounded look */
+    color: #ffeecf;                       /* YOUR ORIGINAL COLOR */
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.logo-text:hover {
+    opacity: 0.9;
+}
+
+/* -------------------------------------------------
+   MAIN CENTER LAYOUT
+-------------------------------------------------- */
+main.center {
+  text-align: center;
+  padding-top: 18vh;
+  animation: fadeIn 1.6s ease;
+}
+
+/* TITLES */
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #f7d9a8;
+  text-shadow: 0 0 18px rgba(255, 200, 120, 0.4);
+}
+
+.sub {
+  font-family: 'Nunito', sans-serif;
+  opacity: 0.85;
+  margin-bottom: 25px;
+  font-size: 1.15rem;
+}
+
+/* -------------------------------------------------
+   BUTTONS
+-------------------------------------------------- */
+.btn,
+.start-btn {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  background: #f7d9a8;
+  color: #3d2b10;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 200, 120, 0.55);
+  transition: 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.start-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(255, 210, 150, 0.85);
+}
+
+/* -------------------------------------------------
+   GENERIC CARD (used on preview etc.)
+-------------------------------------------------- */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 220, 140, 0.28);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  width: 78%;
+  max-width: 540px;
+  margin: 20px auto;
+  box-shadow: 0 0 25px rgba(255, 210, 150, 0.2);
+}
+
+.card p {
+  font-family: 'Nunito', sans-serif;
+}
+
+.poem {
+  font-size: 1.25rem;
+}
+
+.soft {
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* -------------------------------------------------
+   SNOW GLOBE GRID (globes.html)
+-------------------------------------------------- */
+/* -----------------------------------------
+   GLOBE SELECT GRID (4 per row)
+------------------------------------------ */
+
+.globe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 per row */
+    gap: 35px;
+    padding: 40px;
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.globe-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 220, 150, 0.25);
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px rgba(255, 200, 120, 0.15);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.globe-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(255, 240, 200, 0.35);
+}
+
+.globe-item img {
+    width: 100%;
+    border-radius: 12px;
+    filter: drop-shadow(0 0 14px rgba(255, 240, 200, 0.4));
+}
+
+/* -------------------------------------------------
+   WRITE PAGE LAYOUT (write.html)
+-------------------------------------------------- */
+.write-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-top: 14vh;
+  align-items: flex-start;
+}
+
+.write-left {
+  flex: 1;
+  text-align: center;
+}
+
+.write-globe {
+  width: 360px;
+  max-width: 100%;
+  border-radius: 16px;
+  filter: drop-shadow(0 0 25px rgba(255, 240, 200, 0.25)) brightness(1.06);
+  opacity: 0.94;
+}
+
+.write-right {
+  flex: 1;
+  max-width: 480px;
+}
+
+.write-right h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.write-right .sub {
+  margin-bottom: 20px;
+}
+
+/* FORM LABELS */
+.field-label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: #f7f3e9;
+}
+
+/* FROSTED INPUTS */
+.frost-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(25, 34, 51, 0.55);
+  border: 1px solid rgba(255, 220, 150, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  color: #f2eade;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.frost-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* FROSTED MESSAGE BOX */
+.frost-letter {
+  width: 100%;
+  height: 220px;
+  padding: 18px;
+  background: rgba(25, 34, 51, 0.55);
+  border: 1px solid rgba(255, 220, 150, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #f2eade;
+  resize: none;
+}
+
+.frost-letter::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* -------------------------------------------------
+   FINAL POSTCARD LAYOUT (final.html)
+-------------------------------------------------- */
+/* FINAL PAGE CLEAN */
+.final-center {
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.final-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffeecf;
+}
+
+.final-sub {
+    margin-top: 6px;
+    font-size: 1.1rem;
+    color: #e6d9c5;
+}
+
+.final-card {
+    width: 520px;
+    margin: 40px auto;
+    padding: 32px;
+    border-radius: 22px;
+
+    background: rgba(20,25,35,0.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,235,200,0.14);
+    box-shadow: 0 0 25px rgba(255,235,200,0.08);
+
+    animation: fadeUp 0.7s ease-out;
+}
+
+.final-globe {
+    width: 170px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+.final-line {
+    margin: 3px 0;
+}
+
+.final-message {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #ffeede;
+}
+
+/* Copy box */
+.final-copybox {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.14);
+    color: #ffe9b0;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.25s ease;
+}
+
+.final-copybox:hover {
+    background: rgba(255,255,255,0.20);
+}
+
+/* Buttons */
+.final-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.final-btn {
+    padding: 12px 28px;
+    background: #ffe4bd;
+    border-radius: 26px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(255,200,150,0.35);
+    transition: 0.25s ease;
+}
+
+.final-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* -------------------------------------------------
+   SNOW ANIMATION
+-------------------------------------------------- */
+
+/* GLOBAL SNOW — sits behind UI but above background */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  opacity: 1;
+  pointer-events: none;
+  animation: snow linear infinite;
+
+  z-index: 2;   /* FIXED — no more 9999 */
+}
+
+/* -------------------------------------------------
+   FOOTER (if used)
+-------------------------------------------------- */
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  color: #b5c3d4;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* -------------------------------------------------
+   ANIMATIONS
+-------------------------------------------------- */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* -------------------------
+   RECEIVER PAGE REVEAL
+-------------------------- */
+
+.reveal-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 18vh auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.reveal-globe {
+    width: 280px;
+    cursor: pointer;
+    transition: all 0.9s ease;
+    opacity: 0;
+    transform: scale(0.7);
+    animation: globePop 1.2s forwards ease-out;
+    filter: drop-shadow(0 0 25px rgba(255,220,150,0.55));
+}
+
+@keyframes globePop {
+    0% { opacity: 0; transform: scale(0.6) translateY(20px); }
+    60% { opacity: 1; transform: scale(1.05) translateY(0); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.globe-left {
+    transform: translateX(-180px) scale(0.9);
+    transition: all 1s cubic-bezier(.25,.8,.25,1);
+}
+
+.reveal-message {
+    opacity: 0;
+    margin-left: 0;
+    transform: translateX(40px);
+    transition: all 1s ease;
+    text-align: left;
+    max-width: 350px;
+}
+
+.message-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-message h1 {
+    font-size: 2.3rem;
+    color: #f7d9a8;
+    text-shadow: 0 0 15px rgba(255,210,140,0.4);
+}
+
+.names {
+    margin: 6px 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.final-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-top: 15px;
+    color: #fff9ec;
+    font-style: italic;
+}
+
+.contact-icon {
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 1.6rem;
+    color: #f7d9a8;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.contact-icon:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    text-shadow: 0 0 12px rgba(255, 220, 150, 0.7);
+}
+/* -------------------------------------------------
+   BOTTOM EMOTIONAL QUOTE (RESPONSIVE)
+-------------------------------------------------- */
+
+.story-quote {
+    position: absolute;
+    left: 50%;
+    bottom: 5vh;               /* near the bottom always */
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1100px;
+
+    background: rgba(0,0,0,0.03);   /* very transparent */
+    padding: 35px 50px;
+    border-radius: 18px;
+    backdrop-filter: blur(1px);
+
+    text-align: center;
+    z-index: 3;
+}
+
+.story-quote {
+    position: absolute;
+    left: 50%;
+    bottom: 2.5vh;            /* closer to the bottom */
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1100px;
+
+    background: rgba(0,0,0,0.03);
+    padding: 35px 50px;
+    border-radius: 18px;
+    backdrop-filter: blur(1px);
+
+    text-align: center;
+    z-index: 3;
+}
+
+.leaf-over {
+    position: relative;
+}
+
+.leaf-over::after {
+    content: '❧';
+    position: absolute;
+    top: -20px; 
+    left: 4px;
+    font-size: 1.2rem;
+    color: #ffeecf;
+    transform: rotate(-15deg);
+}
+.header-btn {
+    position: absolute;
+    right: 90px;
+    top: 24px;
+    font-family: 'Nunito', sans-serif;
+    color: #ffeecf;
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.header-btn:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+/* Bottom navigation - separated from copy box */
+.bottom-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+    user-select: none; /* stop accidental text highlighting */
+}
+
+/* Home + History buttons */
+.nav-btn {
+    background: #fbd68f;
+    padding: 12px 26px;
+    border-radius: 28px;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #3d2b10;
+    box-shadow: 0 0 12px rgba(255, 200, 120, 0.55);
+    transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(255, 210, 150, 0.85);
+}
+
+.nav-btn:active {
+    transform: scale(0.96);
+}
+/* Aesthetic Snow-Globe Frame */
+.globe-item {
+    background: rgba(20, 30, 48, 0.35); /* dark winter-blue tint */
+    border: 1px solid rgba(255, 220, 150, 0.22);
+    border-radius: 18px;
+    padding: 22px;
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 0 25px rgba(255, 230, 180, 0.15),
+        0 0 60px rgba(80, 110, 150, 0.15) inset;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+/* Make globe images blend better */
+.globe-item img {
+    width: 100%;
+    border-radius: 14px;
+
+    /* Aesthetic blending filters */
+    filter:
+        brightness(0.92)
+        contrast(1.05)
+        saturate(0.95)
+        drop-shadow(0 0 18px rgba(255, 230, 180, 0.35));
+    
+    transition: 0.3s ease;
+}
+
+/* Hover glow matches the warm lights in the background */
+.globe-item:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 40px rgba(255, 220, 160, 0.45),
+        0 0 70px rgba(255, 230, 180, 0.25) inset;
+}
+
+.globe-item:hover img {
+    filter:
+        brightness(1)
+        contrast(1.08)
+        saturate(1)
+        drop-shadow(0 0 25px rgba(255, 240, 200, 0.55));
+}
+/* -----------------------------------------
+   DREAMY SNOWGLOBE MODE ❄️✨
+   Soft glow • cinematic haze • frosted frames
+------------------------------------------ */
+
+.globe-item {
+    position: relative;
+    background: rgba(18, 26, 40, 0.28);
+    border: 1px solid rgba(255, 235, 190, 0.18);
+    border-radius: 20px;
+    padding: 22px;
+    backdrop-filter: blur(7px) brightness(1.05);
+    -webkit-backdrop-filter: blur(7px) brightness(1.05);
+    box-shadow:
+        0 0 12px rgba(255, 230, 190, 0.25),
+        0 0 35px rgba(70, 120, 180, 0.15) inset,
+        0 0 80px rgba(255, 210, 150, 0.12);
+    transition: 0.35s ease;
+}
+
+.globe-item img {
+    width: 100%;
+    border-radius: 16px;
+    filter:
+        brightness(0.92)
+        contrast(1.08)
+        saturate(0.88)
+        sepia(0.08)
+        drop-shadow(0 0 20px rgba(255, 235, 200, 0.45));
+    transition: 0.4s ease;
+}
+
+.globe-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:
+        0 0 25px rgba(255, 240, 200, 0.6),
+        0 0 60px rgba(255, 220, 150, 0.35),
+        0 0 95px rgba(255, 200, 130, 0.2);
+    background: rgba(25, 36, 55, 0.33);
+}
+
+.globe-item:hover img {
+    filter:
+        brightness(1.05)
+        contrast(1.12)
+        saturate(1.05)
+        drop-shadow(0 0 35px rgba(255, 240, 200, 0.75));
+}
+
+.globe-item::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    background: radial-gradient(
+        circle at 50% -20%,
+        rgba(255, 255, 255, 0.18),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.globe-item:hover::after {
+    opacity: 1;
+}
+
+.globe-item::before {
+    content: "✦";
+    position: absolute;
+    bottom: 6px;
+    right: 12px;
+    font-size: 14px;
+    color: rgba(255, 240, 200, 0.7);
+    opacity: 0;
+    animation: twinkle 2.2s infinite ease-in-out;
+}
+
+.globe-item:hover::before {
+    opacity: 1;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50%      { opacity: 1; transform: scale(1.25); }
+}
+
+
+.selected-dot {
+    width: 12px;
+    height: 12px;
+    background: #ffe6b3;
+    border-radius: 50%;
+    margin: 12px auto 0 auto;
+    opacity: 0;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 0 12px rgba(255, 230, 180, 0.9);
+}
+
+/* WORKS 100% — dot will show under the globe */
+.globe-item input:checked ~ .selected-dot {
+    opacity: 1;
+}
+
+/* Hide radio input so it stops shifting the layout */
+.globe-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.globe-item input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.write-globe {
+    animation: floatSoft 5.5s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-6px); } /* only 6px — gentle */
+    100% { transform: translateY(0); }
+}
+
+.write-globe {
+    filter:
+        drop-shadow(0 0 25px rgba(255, 230, 180, 0.35))
+        brightness(1.08)
+        contrast(1.03);
+}
+.write-left {
+    position: relative;
+}
+
+.write-left::after {
+    content: "";
+    position: absolute;
+    top: -40px; left: -40px; right: -40px; bottom: -40px;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.12) 0%,
+        transparent 70%
+    );
+    opacity: 0.25;
+    filter: blur(12px);
+}
+.write-left::before {
+    content: "✦";
+    position: absolute;
+    top: -20px; right: 10px;
+    font-size: 22px;
+    color: rgba(255, 240, 200, 0.7);
+    animation: twinkle 2.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%,100% { opacity: 0.2; transform: scale(1); }
+    50%     { opacity: 1; transform: scale(1.35); }
+}
+.write-globe:hover {
+    transform: translateY(-10px) rotateZ(-2deg) scale(1.03);
+    transition: transform 0.35s ease;
+}
+
+/* -------------------------------------------------
+   CINEMATIC SNOWMEN — Tier-II AI Upgrade
+-------------------------------------------------- */
+
+/* Layout under globe */
+.snowman-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 14px;
+    position: relative;
+}
+
+/* Snowman container */
+.snowman-wrap {
+    position: relative;
+    width: 90px;
+    height: 140px;
+    animation: slightFloat 4s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+/* Floating */
+@keyframes slightFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* Snowball body parts */
+.snowball {
+    position: absolute;
+    background: radial-gradient(circle, #f2f4f7 0%, #d6dbe3 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.4);
+    animation: build 0.9s forwards ease-out;
+    filter: drop-shadow(0 0 6px rgba(255,220,150,0.12));
+}
+
+.base {
+    width: 70px;
+    height: 70px;
+    bottom: 0;
+    left: 10px;
+    animation-delay: 0.2s;
+}
+
+.mid {
+    width: 52px;
+    height: 52px;
+    bottom: 48px;
+    left: 19px;
+    animation-delay: 0.55s;
+}
+
+.head {
+    width: 36px;
+    height: 36px;
+    bottom: 90px;
+    left: 27px;
+    animation-delay: 0.9s;
+    transition: transform 0.15s ease-out;
+}
+
+/* Eyes blink */
+.head::before,
+.head::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    opacity: 0;
+    top: 12px;
+    animation: blinkEyes 5s infinite ease-in-out;
+    animation-delay: 1.4s;
+}
+
+.head::before { left: 8px; }
+.head::after { right: 8px; }
+
+@keyframes blinkEyes {
+    0%, 96%, 100% { transform: scaleY(1); opacity: 1; }
+    97% { transform: scaleY(0.1); opacity: 1; }
+}
+
+/* Breath vapor */
+.breath {
+    position: absolute;
+    bottom: 100px;
+    left: 45px;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    opacity: 0;
+    animation: breathLoop 4s ease-in-out infinite;
+}
+
+@keyframes breathLoop {
+    0% { transform: translateY(0) scale(0.5); opacity: 0; }
+    10% { opacity: 0.6; }
+    40% { transform: translateY(-10px) scale(1); opacity: 0.2; }
+    100% { opacity: 0; transform: translateY(-20px) scale(1.2); }
+}
+
+/* Carrot */
+.carrot {
+    width: 0;
+    height: 0;
+    border-left: 10px solid #eab26e;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    bottom: 105px;
+    left: 52px;
+    transform: scale(0);
+    opacity: 0.85;
+    animation: build 0.4s forwards ease-out;
+    animation-delay: 1.25s;
+}
+
+/* Arms */
+.arm {
+    width: 30px;
+    height: 3px;
+    background: #4e3b24;
+    position: absolute;
+    top: 80px;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: armGrow 0.5s forwards ease-out;
+}
+
+.left-arm {
+    left: 0px;
+    transform: rotate(-18deg) scaleX(0);
+    animation-delay: 1.45s;
+}
+
+.right-arm {
+    right: 0px;
+    transform: rotate(18deg) scaleX(0);
+    animation:
+        armGrow 0.5s forwards ease-out 1.6s,
+        snowmanWave 3s ease-in-out infinite 2.8s;
+}
+
+@keyframes snowmanWave {
+    0% { transform: rotate(18deg) scaleX(1); }
+    50% { transform: rotate(35deg) scaleX(1.05); }
+    100% { transform: rotate(18deg) scaleX(1); }
+}
+
+/* Build animation */
+@keyframes build {
+    from { transform: scale(0.4); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* Arms */
+@keyframes armGrow {
+    from { transform: scaleX(0); opacity: 0; }
+    to   { transform: scaleX(1); opacity: 0.8; }
+}
+
+/* Snowball toss */
+.cursor-snowball {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle, #f2f4f7 0%, #d6dbe3 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Halo */
+.snow-halo {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+}
+
+.snow-halo span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.55);
+    border-radius: 50%;
+    animation: haloSpin 5s linear infinite;
+}
+
+@keyframes haloSpin {
+    0%   { transform: rotate(0deg) translate(18px) rotate(0deg); }
+    100% { transform: rotate(360deg) translate(18px) rotate(-360deg); }
+}
+
+/* Typing wiggle */
+.snowman-wrap.type-react {
+    animation: reactWiggle 0.6s ease-out;
+}
+
+@keyframes reactWiggle {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-6px); }
+    60% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+}
+
+/* BLOOM PAGE */
+.bloom-center {
+    text-align: center;
+    padding-top: 22vh;
+}
+
+.bloom-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffeecf;
+    line-height: 1.25;
+}
+
+.bloom-sub {
+    margin-top: 10px;
+    font-size: 1.15rem;
+    opacity: 0.9;
+    color: #e6d9c5;
+}
+
+.bloom-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 32px;
+    background: #ffe4bd;
+    border-radius: 28px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(255,200,150,0.45);
+    transition: 0.25s ease;
+}
+
+.bloom-btn:hover {
+    transform: translateY(-4px);
+}
+/* -----------------------------------------
+   FINAL PAGE — UNIQUE & ISOLATED CLASSES
+------------------------------------------*/
+
+.finalX-wrapper {
+    text-align: center;
+    padding-top: 22vh;
+}
+
+.finalX-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffeecf;
+}
+
+.finalX-sub {
+    margin-top: 6px;
+    font-size: 1.15rem;
+    color: #e6d9c5;
+}
+
+.finalX-card {
+    width: 520px;
+    margin: 35px auto;
+    padding: 32px;
+    border-radius: 22px;
+
+    background: rgba(20,25,35,0.55);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,235,200,0.14);
+    box-shadow: 0 0 25px rgba(255,235,200,0.08);
+
+    animation: fadeUp 0.7s ease-out;
+}
+
+.finalX-globe {
+    width: 170px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+.finalX-line {
+    margin: 4px 0;
+    color: #f7f3e9;
+}
+
+.finalX-message {
+    margin-top: 18px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #ffeede;
+}
+
+/* Copy box */
+.finalX-copybox {
+    margin-top: 22px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.14);
+    color: #ffe9b0;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.finalX-copybox:hover {
+    background: rgba(255,255,255,0.20);
+}
+
+/* Buttons */
+.finalX-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.finalX-btn {
+    padding: 12px 28px;
+    background: #ffe4bd;
+    border-radius: 26px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(255,200,150,0.35);
+    transition: 0.25s ease;
+}
+
+.finalX-btn:hover {
+    transform: translateY(-4px);
+}
+/* =======================================================
+   FINAL PAGE — ISOLATED & SAFE FROM BLOOM/PREVIEW STYLES
+======================================================= */
+
+.final-card {
+    margin-top: 160px;
+    width: 600px;
+    background: rgba(0,0,0,0.45);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    color: #f7f3e9;
+
+    box-shadow: 0 0 30px rgba(255,220,150,0.15);
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 5;
+}
+
