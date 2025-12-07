@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Snow Bloom ❄️</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <a href="mailto:shivamt.2528@itmuniversity.org" class="contact-icon">
+        ❄️
+    </a>
+</header>
+
+
+
+<main class="center">
+  <h1>Your Snow Bloom ❄️</h1>
+  <p class="sub">A message carried softly into the winter night.</p>
+
+  <div class="card">
+    <img src="/static/images/globes/{{ globe }}.png"
+         alt="Snow globe"
+         style="width:200px; border-radius:10px; margin-bottom:15px;">
+
+    <p><strong>To:</strong> {{ to_name }}</p>
+    <p><strong>From:</strong> {{ from_name }}</p>
+
+    <p class="poem" style="margin-top:18px;">“{{ message }}”</p>
+  </div>
+
+  <br>
+  <a href="/" class="btn">🏡 Home</a>
+</main>
+
+<div class="village"></div>
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+</body>
+</html>
