@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Winter Whisper ✍️
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <a href="mail to- :shivamt.2528@itmuniversity.org" class="contact-icon">
+        ❄️
+
+    </a>
+</header>
+<main>
+
+  <div class="write-container">
+
+    <!-- LEFT COLUMN: SNOW GLOBE -->
+    <div class="write-left">
+      <img src="/static/images/globes/{{ globe }}.png" class="write-globe">
+    </div>
+
+    <!-- RIGHT COLUMN: FORM -->
+    <div class="write-right">
+
+      <h1>Your Winter Whisper</h1>
+      <p class="sub">Write a whisper only winter will understand.</p>
+
+      <form action="/preview" method="POST">
+
+        <input type="hidden" name="globe" value="{{ globe }}">
+
+        <label class="field-label">To:</label>
+        <input type="text" name="to_name" class="frost-input" placeholder="Who is this for?" required>
+
+        <label class="field-label">From:</label>
+        <input type="text" name="from_name" class="frost-input" placeholder="Your name" required>
+
+        <label class="field-label">Message</label>
+        <textarea name="message" class="frost-letter" placeholder="Write something warm..." required></textarea>
+
+        <button class="btn" type="submit">Preview ✨
+</button>
+      </form>
+
+    </div>
+  </div>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+</body>
+</html>
