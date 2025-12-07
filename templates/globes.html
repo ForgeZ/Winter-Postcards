@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Select a Snow Globe ✨
-</title>
+<title>Select a Snow Globe ✨</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -12,9 +11,8 @@
 <header>
     <a href="/" class="logo-text">Winter Postcards</a>
 
-    <a href="mailto:YOUR_EMAIL_HERE" class="contact-icon">
+    <a href="mailto:shivamt.2528@itmuniversity.org" class="contact-icon">
         ❄️
-
     </a>
 </header>
 
@@ -25,19 +23,21 @@
 
   <form action="/write" method="POST">
 
-  <div class="globe-grid">
-    {% for globe in globes %}
-    <label class="globe-item">
-      <input type="radio" name="globe" value="{{ globe }}" required>
-      <img src="/static/images/globes/{{ globe }}.png">
-    </label>
-    {% endfor %}
-  </div>
+    <div class="globe-grid">
+        {% for g in globes %}
+           <label class="globe-item">
+    <input type="radio" name="globe" value="{{ g }}" required>
+    <img src="/static/images/globes/{{ g }}.png">
+    <div class="selected-dot"></div>
+    
+</label>
 
-  <button type="submit" class="btn">Continue ❄️
-</button>
+        {% endfor %}
+    </div>
 
-</form>
+    <button type="submit" class="btn">Continue ❄️</button>
+
+  </form>
 
 </main>
 
