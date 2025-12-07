@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>You’ve Received a Winter Bloom ❄️
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.reveal-container {
+    text-align: center;
+    padding-top: 22vh;
+    animation: fadeIn 1.4s ease;
+}
+
+.reveal-heading {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #f7d9a8;
+    text-shadow: 0 0 18px rgba(255, 200, 120, 0.45);
+    margin-bottom: 10px;
+}
+
+.reveal-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+.view-btn {
+    background: #f7d9a8;
+    padding: 14px 36px;
+    border-radius: 40px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: #3d2b10;
+    text-decoration: none;
+    box-shadow: 0 0 22px rgba(255,200,150,0.55);
+    transition: 0.25s all;
+}
+
+.view-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 32px rgba(255,220,160,0.85);
+}
+</style>
+</head>
+
+<body>
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <a href="mailto:YOUR_EMAIL_HERE" class="contact-icon">
+        ❄️
+
+    </a>
+</header>
+
+
+<main class="reveal-container">
+    <h1 class="reveal-heading">You’ve received a Winter Bloom ❄️
+</h1>
+    <p class="reveal-sub">A whisper wrapped gently in snow, waiting to be opened.</p>
+
+   <a href="{{ url_for('bloom', postcard_id=postcard_id) }}" class="view-btn">
+   View Your Bloom ✨
+
+</a>
+
+</main>
+
+<div class="village"></div>
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+</body>
+</html>
