@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Whisper Is Ready ❄️</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+/* Centered frosted share box */
+.sent-box {
+    margin-top: 18vh;
+    background: rgba(15, 20, 35, 0.55);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    width: 90%;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #f7f3e9;
+    box-shadow: 0 0 25px rgba(255, 220, 150, 0.25);
+    animation: fadeIn 1.2s ease;
+}
+
+/* Heading */
+.sent-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #f7d9a8;
+    text-shadow: 0 0 18px rgba(255, 200, 120, 0.4);
+    margin-bottom: 10px;
+}
+
+.sent-sub {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* Input box */
+.share-input {
+    width: 95%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,220,150,0.35);
+    background: rgba(255,255,255,0.85);
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Buttons */
+.sent-btn {
+    display: inline-block;
+    background: #f7d9a8;
+    color: #3d2b10;
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 10px;
+    box-shadow: 0 0 18px rgba(255,200,150,0.55);
+    transition: 0.25s ease;
+}
+
+.sent-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px rgba(255,220,160,0.85);
+}
+
+/* Home button */
+.home-wrap {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.home-btn {
+    background: #ffe1a6;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #3d2b10;
+    box-shadow: 0 0 18px rgba(255,220,160,0.45);
+    font-weight: 700;
+}
+
+.home-btn:hover {
+    transform: translateY(-3px);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="logo-text">Winter Postcards</a>
+
+    <a href="mailto:YOUR_EMAIL_HERE" class="contact-icon">
+        ❄️
+    </a>
+</header>
+
+
+
+<div class="sent-box">
+
+    <h1 class="sent-title">✨ Your Whisper Is Ready</h1>
+
+    <p class="sent-sub">Share this little snow-lit message with someone you care about.</p>
+
+    <p><strong>Share link:</strong></p>
+
+    <input id="shareLink" class="share-input" readonly
+           value="{{ request.url_root }}reveal/{{ postcard_id }}">
+
+    <button class="sent-btn" onclick="copyLink()">Copy Link 📋</button>
+
+    <br>
+
+    <a class="sent-btn"
+       href="https://wa.me/?text={{ request.url_root }}reveal/{{ postcard_id }}"
+       target="_blank">Share on WhatsApp 💬</a>
+
+</div>
+
+<div class="home-wrap">
+    <a href="/" class="home-btn">🏡 Back Home</a>
+</div>
+
+<div class="village"></div>
+<script src="{{ url_for('static', filename='js/snow.js') }}"></script>
+
+<script>
+function copyLink() {
+    const input = document.getElementById("shareLink");
+    input.select();
+    navigator.clipboard.writeText(input.value);
+    alert("Link copied!");
+}
+</script>
+
+</body>
+</html>
