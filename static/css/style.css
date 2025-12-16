@@ -366,18 +366,29 @@ h1 {
 /* GLOBAL SNOW — sits behind UI but above background */
 .snowflake {
   position: fixed;
-  top: -10px;
-  width: 20px;
-  height: 20px;
+  top: -10vh;
 
   background-size: contain;
   background-repeat: no-repeat;
 
-  opacity: 1;
   pointer-events: none;
-  animation: snow linear infinite;
+  opacity: 0.9;
 
-  z-index: 2;   /* FIXED — no more 9999 */
+  animation-name: snowFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  z-index: 2;
+}
+@keyframes snowFall {
+  from {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0.25;
+  }
 }
 
 /* -------------------------------------------------
