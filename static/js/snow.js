@@ -1,18 +1,25 @@
-const petalColors = ['#ffffff', '#f2f2f2', '#e9eef6', '#dde7fa'];
+console.log("❄️ snow.js loaded");
 
-for (let i = 0; i < 40; i++) {
-  const petal = document.createElement('div');
-  petal.classList.add('petal');
+const snowImages = [
+  '/static/images/snowflake1.png',
+  '/static/images/snowflake2.png',
+  '/static/images/snowflake3.png'
+];
+
+for (let i = 0; i < 45; i++) {
+  const snow = document.createElement('div');
+  snow.classList.add('snowflake');
 
   const size = 6 + Math.random() * 14;
-  petal.style.width = size + 'px';
-  petal.style.height = size + 'px';
+  snow.style.width = size + 'px';
+  snow.style.height = size + 'px';
 
-  petal.style.left = Math.random() * 100 + 'vw';
-  petal.style.background = petalColors[Math.floor(Math.random() * petalColors.length)];
+  snow.style.left = Math.random() * 100 + 'vw';
+  snow.style.backgroundImage =
+    `url(${snowImages[Math.floor(Math.random() * snowImages.length)]})`;
 
-  petal.style.animationDuration = (5 + Math.random() * 5) + 's';
-  petal.style.animationDelay = (Math.random() * 5) + 's';
+  snow.style.animationDuration = (6 + Math.random() * 6) + 's';
+  snow.style.animationDelay = Math.random() * 5 + 's';
 
-  document.body.appendChild(petal);
+  document.body.appendChild(snow);
 }
